@@ -1,5 +1,7 @@
 package com.jonbullock.vday.models;
 
+import org.springframework.web.bind.annotation.ModelAttribute;
+
 public class Image {
     public Image(String url) {
         this.url = url;
@@ -7,6 +9,7 @@ public class Image {
 
     private String url;
 
+    @ModelAttribute("url")
     public String getUrl() {
         return url;
     }
