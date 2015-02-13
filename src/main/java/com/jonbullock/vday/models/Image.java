@@ -1,4 +1,4 @@
-package models;
+package com.jonbullock.vday.models;
 
 public class Image {
     public Image(String url) {
