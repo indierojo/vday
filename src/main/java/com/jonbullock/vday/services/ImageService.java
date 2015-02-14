@@ -12,7 +12,6 @@ import java.util.stream.IntStream;
 
 public class ImageService {
 
-    private final IntStream randomIntStream;
     private final List<Image> imageList;
     private final Random random;
 
@@ -28,11 +27,12 @@ public class ImageService {
                 .map(ImagePathParser::getImageFrom)
                 .collect(Collectors.toList());
         random = new Random();
-        randomIntStream = random.ints(0, imageFileList.size());
     }
 
     public Image getRandomImage() {
-        return imageList.get(randomIntStream.findAny().getAsInt());
+
+        IntStream intStream = random.ints(0, imageList.size());
+        return imageList.get(intStream.findAny().getAsInt());
     }
 
     public Image getById(int id) {
