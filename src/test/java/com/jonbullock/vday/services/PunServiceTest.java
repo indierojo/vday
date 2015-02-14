@@ -1,7 +1,6 @@
 package com.jonbullock.vday.services;
 
 import org.junit.Test;
-import sun.jvm.hotspot.utilities.Assert;
 
 import java.util.ArrayList;
 import java.util.HashSet;
