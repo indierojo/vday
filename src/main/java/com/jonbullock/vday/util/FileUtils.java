@@ -1,6 +1,7 @@
 package com.jonbullock.vday.util;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -32,5 +33,10 @@ public class FileUtils {
             }
         } catch (IOException ex) {}
         return fileNames;
+    }
+
+    public static String readToString(String textFilePath) throws IOException {
+        byte[] encoded = Files.readAllBytes(Paths.get(textFilePath));
+        return new String(encoded, Charset.defaultCharset());
     }
 }
