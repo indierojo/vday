@@ -46,6 +46,6 @@ public class ImageServiceTest {
             throw new RuntimeException("Cannot find images resource directory!");
         }
 
-        return new ImageService(imagesUrl.getPath());
+        return new ImageService();
     }
 }

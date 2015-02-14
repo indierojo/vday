@@ -20,7 +20,7 @@ public class PunServiceTest {
             throw new RuntimeException("Cannot find images resource directory!");
         }
 
-        return new PunService(punUrl.getPath());
+        return new PunService();
     }
 
     @Test

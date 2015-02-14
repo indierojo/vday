@@ -42,7 +42,7 @@ public class ImageController {
     private void initServices() {
         if (imageService == null) {
             URL imagePath = context.getClassLoader().getResource("images");
-            imageService = new ImageService(imagePath.getPath());
+            imageService = new ImageService();
         }
     }
 }
