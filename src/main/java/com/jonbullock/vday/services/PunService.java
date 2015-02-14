@@ -40,7 +40,7 @@ public class PunService {
         map.put("stripe", getPunListFor("You're st-ripe for lovin!"));
         map.put("thread", getPunListFor("I thread a love story the other day and thought of you!"));
         map.put("tread", getPunListFor("I tread to think of any love but ours!", "Are you tread-y for love?"));
-        map.put("tree", getPunListFor("I be-tree-ch you to find someone who loves you more!"));
+        map.put("tree", getPunListFor("I be-tree-ch you to love me!"));
         map.put("valentine", getPunListFor("Will you be my valentine?"));
         map.put("water", getPunListFor("Water you going to do with all this love?"));
         map.put("wall", getPunListFor("You make me feel wall fuzzy inside.", "Wall I want is you!"));
