@@ -15,21 +15,20 @@ public class FileUtilsTest {
 
     @Test
     public void testGetAllFilesInFolder() throws Exception {
-
         ClassLoader classLoader = getClass().getClassLoader();
         String imagesPath = classLoader.getResource("images").getPath();
         List<String> fileList = FileUtils.getAllFilesInFolder(imagesPath);
 
-        assertEquals(2, fileList.size());
+        assertEquals(3, fileList.size());
     }
 
     @Test
     public void testGetAllFilesInFolder_should_match_an_extension() throws Exception {
-
         ClassLoader classLoader = getClass().getClassLoader();
         String imagesPath = classLoader.getResource("images").getPath();
 
         List<String> fileList = FileUtils.getAllFilesInFolder(imagesPath, ".jpg");
-        assertEquals(1, fileList.size());
+        assertEquals(2, fileList.size());
+    }
     }
 }
