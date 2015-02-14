@@ -12,6 +12,6 @@ public class ImageController {
 
     @RequestMapping(method= RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
     public Image image() {
-        return new Image("image.jpg", "cc", null);
+        return new Image(1, "image.jpg", "cc", null);
     }
 }

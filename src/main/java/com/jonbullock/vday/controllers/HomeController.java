@@ -11,7 +11,7 @@ public class HomeController {
     @RequestMapping("/")
     public ModelAndView index() {
         ModelAndView mav = new ModelAndView("index");
-        mav.addObject("image", new Image("www.google.com", "cc", null));
+        mav.addObject("image", new Image(1, "www.google.com", "cc", null));
         return mav;
     }
 }

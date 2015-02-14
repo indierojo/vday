@@ -21,6 +21,7 @@ public class ImagePathParserTest {
 
         Image result = ImagePathParser.getImageFrom(imagePath);
         assertNotNull(result);
+        assertEquals(1, result.getId());
         assertEquals(imagePath, result.getUrl());
         assertEquals(expectedTags, result.getTags());
         assertEquals(TextLocation.CenterCenter, result.getTextLocation());

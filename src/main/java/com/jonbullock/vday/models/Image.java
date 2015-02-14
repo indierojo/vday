@@ -8,12 +8,17 @@ public class Image {
     private final List<String> tags;
     private final TextLocation textLocation;
     private final String url;
+    private final int id;
 
-    public Image(String url, String textLocation, List<String> tags) {
+    public Image(int id, String url, String textLocation, List<String> tags) {
+        this.id = id;
         this.url = url;
         this.tags = tags;
         this.textLocation = TextLocation.getFromAbbreviation(textLocation);
     }
+
+    @ModelAttribute("id")
+    public int getId() { return id; }
 
     @ModelAttribute("url")
     public String getUrl() {
@@ -29,4 +34,10 @@ public class Image {
     public TextLocation getTextLocation() {
         return textLocation;
     }
+
+    public boolean containsTag(String tagName) {
+        return tags.contains(tagName);
+    }
+
+
 }
