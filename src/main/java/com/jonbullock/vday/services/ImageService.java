@@ -4,7 +4,6 @@ import com.jonbullock.vday.models.Image;
 import com.jonbullock.vday.util.FileUtils;
 import com.jonbullock.vday.util.ImagePathParser;
 
-import java.net.URL;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -15,14 +14,8 @@ public class ImageService {
     private final List<Image> imageList;
     private final Random random;
 
-    public ImageService() {
-        ClassLoader classLoader = getClass().getClassLoader();
-        URL imagesUrl = classLoader.getResource("images");
-        if(imagesUrl == null) {
-            throw new RuntimeException("Cannot find images resource directory!");
-        }
-
-        List<String> imageFileList = FileUtils.getAllFilesInFolder(imagesUrl.getPath(), ".jpg");
+    public ImageService(String imagePath) {
+        List<String> imageFileList = FileUtils.getAllFilesInFolder(imagePath, ".jpg");
         imageList = imageFileList.stream()
                 .map(ImagePathParser::getImageFrom)
                 .collect(Collectors.toList());

@@ -5,7 +5,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.*;
 
 public class PunService {
@@ -13,15 +12,9 @@ public class PunService {
     private final Map<String, List<String>> punMap;
     private final Random random;
 
-    public PunService() {
-        ClassLoader classLoader = getClass().getClassLoader();
-        URL punsUrl = classLoader.getResource("data/puns.json");
-        if(punsUrl == null) {
-            throw new RuntimeException("Cannot find data/puns.json in resource directory!");
-        }
-
+    public PunService(String filePath) {
         try {
-            String punsFileAsString = FileUtils.readToString(punsUrl.getPath());
+            String punsFileAsString = FileUtils.readToString(filePath);
             JSONArray tagPunArray = new JSONArray(punsFileAsString);
             int numberOfTags = tagPunArray.length();
 

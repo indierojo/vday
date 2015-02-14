@@ -2,6 +2,7 @@ package com.jonbullock.vday.services;
 
 import org.junit.Test;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
@@ -10,7 +11,17 @@ import static org.junit.Assert.*;
 
 public class PunServiceTest {
 
-    private final PunService punService = new PunService();
+    private final PunService punService = getPunService();
+
+    private PunService getPunService() {
+        ClassLoader classLoader = getClass().getClassLoader();
+        URL punUrl = classLoader.getResource("data/puns.json");
+        if (punUrl == null) {
+            throw new RuntimeException("Cannot find images resource directory!");
+        }
+
+        return new PunService(punUrl.getPath());
+    }
 
     @Test
     public void it_should_find_a_random_pun() {
