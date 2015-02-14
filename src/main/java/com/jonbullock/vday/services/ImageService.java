@@ -35,8 +35,8 @@ public class ImageService {
         return imageList.get(randomIntStream.findAny().getAsInt());
     }
 
-    public Image getById(int i) {
-        return imageList.get(0);
+    public Image getById(int id) {
+        return imageList.get(id - 1);
     }
 
     public Image getRandomByTag(String tagName) {
