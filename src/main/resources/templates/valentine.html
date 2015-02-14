@@ -3,11 +3,71 @@
 <head>
     <title>Hello Spring Boot!</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+
+        .TopLeft {
+            top: 0;
+            left: 0
+        }
+        .TopCenter {
+            top: 0;
+            left: 30%;
+        }
+        .TopRight {
+            top: 0;
+            right: 0;
+        }
+        .CenterLeft {
+            top: 50%;
+            left: 0
+        }
+        .CenterCenter {
+            top: 35%;
+            left: 35%;
+        }
+        .CenterRight {
+            top: 50%;
+            right: 0;
+        }
+        .BottomLeft {
+            bottom: 0;
+            left: 0
+        }
+        .BottomCenter {
+            bottom: 0;
+            left: 30%;
+        }
+        .BottomRight {
+            bottom: 0;
+            right: 0;
+        }
+
+        .photo {
+            max-width: 800px;
+            max-height: 600px;
+        }
+
+        .wrapper {
+            position: absolute;
+            max-width: 800px;
+            max-height: 600px;
+        }
+
+        #caption {
+            position:absolute;
+            font-family: cursive;
+            margin: 20px;
+            max-width: 200px;
+            font-size: 30px;
+            color: white;
+            text-shadow: 0 0 30px rgba(255, 0, 0, 1);
+        }
+    </style>
 </head>
 <body>
-<div>
-    <img width="800px" heigh="600px" th:src="${imageUrl}"/>
-    <p th:class="${textLocation}" th:text="${pun}"></p>
+<div class="wrapper">
+    <img class="image" th:src="${imageUrl}"/>
+    <p id="caption" th:class="${image.textLocation}" th:text="${pun}"></p>
 </div>
 </body>
 </html>
