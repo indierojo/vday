@@ -9,10 +9,12 @@ public class Image {
     private final TextLocation textLocation;
     private final String url;
     private final int id;
+    private final String fileName;
 
-    public Image(int id, String url, String textLocation, List<String> tags) {
+    public Image(int id, String url, String fileName, String textLocation, List<String> tags) {
         this.id = id;
         this.url = url;
+        this.fileName = fileName;
         this.tags = tags;
         this.textLocation = TextLocation.getFromAbbreviation(textLocation);
     }
@@ -40,4 +42,7 @@ public class Image {
     }
 
 
+    public String getFileName() {
+        return fileName;
+    }
 }
