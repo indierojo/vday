@@ -3,7 +3,6 @@ package com.jonbullock.vday.controllers;
 import com.jonbullock.vday.models.Image;
 import com.jonbullock.vday.services.ImageService;
 import com.jonbullock.vday.services.PunService;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -17,7 +16,7 @@ public class HomeController {
     @RequestMapping("/")
     public ModelAndView index() {
         ModelAndView mav = new ModelAndView("index");
-        mav.addObject("image", new Image(1, "fake", "www.google.com", "cc", null));
+        mav.addObject("image", new Image(1, "fake", "cc", null));
         return mav;
     }
 

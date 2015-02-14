@@ -31,7 +31,9 @@ public class FileUtils {
             for (Path path : directoryStream) {
                 fileNames.add(path.toString());
             }
-        } catch (IOException ex) {}
+        } catch (IOException ex) {
+            throw new RuntimeException("Could not crawl directory tree: " + directory);
+        }
         return fileNames;
     }
 

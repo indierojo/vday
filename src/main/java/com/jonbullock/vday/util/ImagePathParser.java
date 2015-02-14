@@ -22,6 +22,6 @@ public class ImagePathParser {
         for (int i = 2; i < fileNameComponents.length; i++) {
             tags.add(fileNameComponents[i].replace(".jpg", ""));
         }
-        return new Image(id, imageUrl, fileName, textLocationAbbr, tags);
+        return new Image(id, imageUrl, textLocationAbbr, tags);
     }
 }
