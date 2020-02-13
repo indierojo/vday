@@ -15,8 +15,11 @@ public class HomeController {
 
     @RequestMapping("/")
     public ModelAndView index() {
-        ModelAndView mav = new ModelAndView("index");
-        mav.addObject("image", new Image(1, "fake", "cc", null));
+        ModelAndView mav = new ModelAndView("valentine");
+        Image image = imageService.getRandomImage();
+        mav.addObject("image", image);
+        mav.addObject("imageUrl", "/" + image.getUrl());
+        mav.addObject("pun", punService.getRandomPunFor(image.getTags()));
         return mav;
     }
 
